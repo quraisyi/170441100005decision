@@ -1,0 +1,878 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="A Material Design theme for MkDocs">
+      
+      
+        <link rel="canonical" href="https://quraisyi.github.io/170441100005decision/license/">
+      
+      
+        <meta name="author" content="quraisyi">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.2.0">
+    
+    
+      
+        <title>Modul3 Decision tree - Data mining</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.750b69bd.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.224b79ff.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "None", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#penjelasan" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://quraisyi.github.io/170441100005decision/" title="Data mining" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Data mining
+            </span>
+            <span class="md-header-nav__topic">
+              Modul3 Decision tree
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/quraisyi/170441100005decision" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    quraisyi/170441100005decision
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+<nav class="md-tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href=".." title="Modul1 K-mean clustering" class="md-tabs__link md-tabs__link--active">
+        Modul1 K-mean clustering
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://quraisyi.github.io/170441100005decision/" title="Data mining" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Data mining
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/quraisyi/170441100005decision" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    quraisyi/170441100005decision
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../specimen/" title="Identitas diri" class="md-nav__link">
+      Identitas diri
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Modul1 K-mean clustering" class="md-nav__link">
+      Modul1 K-mean clustering
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../getting-started/" title="Modul2 KNN" class="md-nav__link">
+      Modul2 KNN
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Modul3 Decision tree
+      </label>
+    
+    <a href="./" title="Modul3 Decision tree" class="md-nav__link md-nav__link--active">
+      Modul3 Decision tree
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#penjelasan" title="PENJELASAN" class="md-nav__link">
+    PENJELASAN
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#decision-tree" title="Decision tree" class="md-nav__link">
+    Decision tree
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arsitektur-pohon-keputusan" title="Arsitektur Pohon Keputusan" class="md-nav__link">
+    Arsitektur Pohon Keputusan
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#algoritma-pohon-keputusan" title="Algoritma pohon keputusan" class="md-nav__link">
+    Algoritma pohon keputusan
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kelebihan-dan-kekurangan-pohon-keputusan" title="Kelebihan dan kekurangan pohon keputusan" class="md-nav__link">
+    Kelebihan dan kekurangan pohon keputusan
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kelebihan-pohon-keputusan" title="Kelebihan Pohon Keputusan" class="md-nav__link">
+    Kelebihan Pohon Keputusan
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kekurangan-pohon-keputuan" title="Kekurangan Pohon Keputuan" class="md-nav__link">
+    Kekurangan Pohon Keputuan
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#study-kasus-pohon-keputusan-pada-data-shopping_customerdatacsv-menggunakan-python" title="Study kasus pohon keputusan pada data Shopping_CustomerData.csv menggunakan python" class="md-nav__link">
+    Study kasus pohon keputusan pada data Shopping_CustomerData.csv menggunakan python
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#langkah-1-import-libraries" title="Langkah 1: Import Libraries" class="md-nav__link">
+    Langkah 1: Import Libraries
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#langkah-2-menginput-data-serta-menentukan-data-test-dan-data-train" title="Langkah 2: Menginput Data serta menentukan data test dan data train" class="md-nav__link">
+    Langkah 2: Menginput Data serta menentukan data test dan data train
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#langkah-3-membuat-objek-classifer-decision-tree" title="Langkah 3: Membuat objek classifer Decision Tree" class="md-nav__link">
+    Langkah 3: Membuat objek classifer Decision Tree
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#langkah-4data-train-decision-tree" title="Langkah 4:Data train decision tree" class="md-nav__link">
+    Langkah 4:Data train decision tree
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#langkah-5prediksi-respons-untuk-dataset-uji" title="Langkah 5:Prediksi respons untuk dataset uji" class="md-nav__link">
+    Langkah 5:Prediksi respons untuk dataset uji
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#langkah-6-model-accuracy-seberapa-sering-penggolongnya-benar" title="Langkah 6: Model Accuracy, seberapa sering penggolongnya benar?" class="md-nav__link">
+    Langkah 6: Model Accuracy, seberapa sering penggolongnya benar?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#langkah-7menampilkan-secara-visual-pohon-keputusan-menggunakan-graphviz" title="Langkah 7:Menampilkan secara visual pohon keputusan menggunakan graphviz" class="md-nav__link">
+    Langkah 7:Menampilkan secara visual pohon keputusan menggunakan graphviz
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasil-output-dari-program-diatas-sebagai-berikut" title="Hasil output dari program diatas sebagai berikut:" class="md-nav__link">
+    Hasil output dari program diatas sebagai berikut:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#referensi" title="REFERENSI" class="md-nav__link">
+    REFERENSI
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#penjelasan" title="PENJELASAN" class="md-nav__link">
+    PENJELASAN
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#decision-tree" title="Decision tree" class="md-nav__link">
+    Decision tree
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arsitektur-pohon-keputusan" title="Arsitektur Pohon Keputusan" class="md-nav__link">
+    Arsitektur Pohon Keputusan
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#algoritma-pohon-keputusan" title="Algoritma pohon keputusan" class="md-nav__link">
+    Algoritma pohon keputusan
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kelebihan-dan-kekurangan-pohon-keputusan" title="Kelebihan dan kekurangan pohon keputusan" class="md-nav__link">
+    Kelebihan dan kekurangan pohon keputusan
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kelebihan-pohon-keputusan" title="Kelebihan Pohon Keputusan" class="md-nav__link">
+    Kelebihan Pohon Keputusan
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kekurangan-pohon-keputuan" title="Kekurangan Pohon Keputuan" class="md-nav__link">
+    Kekurangan Pohon Keputuan
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#study-kasus-pohon-keputusan-pada-data-shopping_customerdatacsv-menggunakan-python" title="Study kasus pohon keputusan pada data Shopping_CustomerData.csv menggunakan python" class="md-nav__link">
+    Study kasus pohon keputusan pada data Shopping_CustomerData.csv menggunakan python
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#langkah-1-import-libraries" title="Langkah 1: Import Libraries" class="md-nav__link">
+    Langkah 1: Import Libraries
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#langkah-2-menginput-data-serta-menentukan-data-test-dan-data-train" title="Langkah 2: Menginput Data serta menentukan data test dan data train" class="md-nav__link">
+    Langkah 2: Menginput Data serta menentukan data test dan data train
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#langkah-3-membuat-objek-classifer-decision-tree" title="Langkah 3: Membuat objek classifer Decision Tree" class="md-nav__link">
+    Langkah 3: Membuat objek classifer Decision Tree
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#langkah-4data-train-decision-tree" title="Langkah 4:Data train decision tree" class="md-nav__link">
+    Langkah 4:Data train decision tree
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#langkah-5prediksi-respons-untuk-dataset-uji" title="Langkah 5:Prediksi respons untuk dataset uji" class="md-nav__link">
+    Langkah 5:Prediksi respons untuk dataset uji
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#langkah-6-model-accuracy-seberapa-sering-penggolongnya-benar" title="Langkah 6: Model Accuracy, seberapa sering penggolongnya benar?" class="md-nav__link">
+    Langkah 6: Model Accuracy, seberapa sering penggolongnya benar?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#langkah-7menampilkan-secara-visual-pohon-keputusan-menggunakan-graphviz" title="Langkah 7:Menampilkan secara visual pohon keputusan menggunakan graphviz" class="md-nav__link">
+    Langkah 7:Menampilkan secara visual pohon keputusan menggunakan graphviz
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasil-output-dari-program-diatas-sebagai-berikut" title="Hasil output dari program diatas sebagai berikut:" class="md-nav__link">
+    Hasil output dari program diatas sebagai berikut:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#referensi" title="REFERENSI" class="md-nav__link">
+    REFERENSI
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Modul3 Decision tree</h1>
+                
+                <h2 id="penjelasan">PENJELASAN<a class="headerlink" href="#penjelasan" title="Permanent link">&para;</a></h2>
+<h3 id="decision-tree">Decision tree<a class="headerlink" href="#decision-tree" title="Permanent link">&para;</a></h3>
+<p>​           Pohon keputusan    yaitu    pohon dalam    analisis    pemecahan    masalah pengambilan   keputusan mengenai pemetaan   mengenai   alternative - alternatif pemecahan  masalah  yang  dapat  diambil  dari  masalah  tersebut.  Pohon  tersebut juga    memperlihatkan    factor - faktor    kemungkinan/probablitas    yang    akan mempengaruhi  alternative - alternatif  keputusan  tersebut,  disertai  dengan  estimasi hasil akhir yang akan didapat bila kita mengambil alternatif keputusan tersebut.</p>
+<p>​           Decision tree menggunakan struktur hierarki untuk pembelajaran supervised. Proses dari decision tree dimulai dari root node hingga leaf node yang dilakukan secara  rekursif.  Di  mana  setiap  percabangan  menyatakan  suatu  kondisi  yang harus dipenuhi dan pada setiap ujung pohon menyatakan kelas dari suatu data.</p>
+<p>​           Proses dalam pohon keputusan yaitu mengubah bentuk data (tabel) menjadi model  pohon  (tree)  kemudian  mengubah  model  pohon  tersebut  menjadi  aturan  (rule).Metode  pohon  keputusan  digunakan  untuk  memperkirakan  nilai  diskret dari fungsi target yang mana fungsi pembelajaran direpresentasikan oleh sebuah pohon   keputusan   (decision   tree). Pohon   keputusan   terdiri   dari   himpunan IF...THEN. Setiap path dalam tree dihubungkan dengan sebuah aturan, dimana premis terdiri atas sekumpulan node-node yang ditemui dan kesimpullannya dari aturan atas kelas yang terhubung dengan leaf node dari path.</p>
+<h3 id="arsitektur-pohon-keputusan">Arsitektur Pohon Keputusan<a class="headerlink" href="#arsitektur-pohon-keputusan" title="Permanent link">&para;</a></h3>
+<p>​           Arsitektur  pohon  keputusan  dibuat  menyerupai  bentuk  pohon,  dimana pada umumnya  sebuah  pohonterdapat  akar  (root),  cabang  dan  daun  (leaf).Pada pohon keputusan juga terdiri  dari tiga bagian sebagai berikut :</p>
+<p>A.Root node</p>
+<p>​   Root node atau node akar merupakan node yang terletak paling atas dari suatu pohon.</p>
+<p>B.Internal node </p>
+<p>​   Internal  Node ini  merupakan node percabangan,  dimana  pada  node  ini hanyaterdapat satu input dan mempunyai minimal dua output.</p>
+<p>C.Leaf node</p>
+<p>​   Node ini  merupakan node  akhir,  hanya  memiliki  satu  input,  dan  tidak memiliki  output.Pada  pohon  keputusan  setiap leaf  node menandai  label kelas.</p>
+<p>​           Pada  pohon  keputusan  di  setiap  percabangan  menyatakan  kondisi  yang harus  dipenuhi  dan  tiap  ujung  pohon  menyatakan  nilai  kelas  data.Gambar berikut merupakan bentuk arsitektur pohon keputusan.</p>
+<p><img alt="" src="../assets/images/decision.JPG" /></p>
+<p>​           Lambang bulat pada pohon keputusan melambangkan node akar (root node) dan  juga  node  cabang  (internal  node).    Namun  node  akar  selalu  terletak  paling atas  tanpa memiliki  input,  sedangkan  node  cabang  mempunyai  input. Lambang kotak melambangkan node daun (leaf node). Setiap node daun berisi nilai atribut dari node cabang atau node akarnya.</p>
+<h3 id="algoritma-pohon-keputusan">Algoritma pohon keputusan<a class="headerlink" href="#algoritma-pohon-keputusan" title="Permanent link">&para;</a></h3>
+<p>​           Salah satu algoritma induksi pohon keputusan yaitu ID3 (Iterative Dichotomiser 3). ID3 dikembangkan oleh J. Ross Quinlan. Dalam prosedur algoritma ID3, input berupa sampel training, label training dan atribut. Algoritma C4.5 merupakan pengembangan dari ID3. Sedangkan pada perangkat lunak <em>open source</em> WEKA mempunyai versi sendiri C4.5 yang dikenal sebagai J48.</p>
+<p>​           Pohon dibangun dengan cara membagi data secara rekursif hingga tiap bagian terdiri dari data yang berasal dari kelas yang sama. Bentuk pemecahan (<em>split)</em> yang digunakan untuk membagi data tergantung dari jenis atribut yang digunakan dalam <em>split</em>. Algoritma C4.5 dapat menangani data numerik (kontinyu) dan diskret. <em>Split</em> untuk atribut numerik yaitu mengurutkan contoh berdasarkan atribut kontiyu A, kemudian membentuk minimum permulaan <em>(threshold</em>) M dari contoh-contoh yang ada dari kelas mayoritas pada setiap partisi yang bersebelahan, lalu menggabungkan partisi-partisi yang bersebelahan tersebut dengan kelas mayoritas yang sama. <em>Split</em> untuk atribut diskret <em>A</em> mempunyai bentuk <em>value (A)</em> ε <em>X</em> dimana <em>X</em> ⊂ <em>domain(A)</em>.</p>
+<p>​           Jika suatu set data mempunyai beberapa pengamatan dengan <em>missing value</em> yaitu <em>record</em> dengan beberapa nilai variabel tidak ada, Jika jumlah pengamatan terbatas maka atribut dengan <em>missing value</em> dapat diganti dengan nilai rata-rata dari variabel yang bersangkutan.[Santosa,2007]</p>
+<p>​           Untuk melakukan pemisahan obyek (<em>split)</em> dilakukan tes terhadap atribut dengan mengukur tingkat ketidakmurnian pada sebuah simpul (<em>node)</em>. Pada algoritma C.45 menggunakan rasio perolehan (<em>gain ratio</em>). Sebelum menghitung rasio perolehan, perlu menghitung dulu nilai informasi dalam satuan bits dari suatu kumpulan objek. Cara menghitungnya dilakukan dengan menggunakan konsep entropi.</p>
+<p><img alt="" src="../assets/images/image006.gif" /></p>
+<div class="codehilite"><pre><span></span>        S adalah ruang (data) sampel yang digunakan untuk pelatihan, *p+* adalah jumlah yang bersolusi positif atau mendukung pada data sampel untuk kriteria tertentu dan *p-* adalah jumlah yang bersolusi negatif atau tidak mendukung pada data sampel untuk kriteria tertentu. ntropi(*S*) sama dengan 0, jika semua contoh pada S berada dalam kelas yang sama. Entropi(S) sama dengan 1, jika jumlah contoh positif dan negative dalam S adalah sama. Entropi(S) lebih dari 0 tetapi kurang dari 1, jika jumlah contoh positif dan negative dalam S tidak sama [Mitchell,1997].Entropi split yang membagi *S* dengan *n* record menjadi himpunan-himpunan *S1* dengan *n1* baris dan *S2* dengan *n2* baris adalah :
+</pre></div>
+
+
+<p><img alt="" src="../assets/images/image008.gif" /></p>
+<p>​           Kemudian menghitung perolehan informasi dari output data atau variabel dependent <em>y</em> yang dikelompokkan berdasarkan atribut A, dinotasikan dengan <em>gain</em> (<em>y</em>,A). Perolehan informasi*, gain* (<em>y</em>,A), dari atribut A relative terhadap output data <em>y</em> adalah:</p>
+<p><img alt="" src="../assets/images/image010.gif" /></p>
+<p>​           nilai (A) adalah semua nilai yang mungkin dari atribut A, dan <em>y*c adalah subset dari y dimana A mempunyai nilai c. Term pertama dalam persamaan diatas adalah *entropy</em> total <em>y</em> dan term kedua adalah entropy sesudah dilakukan pemisahan data berdasarkan atribut A.</p>
+<p>​           Untuk menghitung rasio perolehan perlu diketahui suatu term baru yang disebut pemisahan informasi <em>(SplitInfo</em>). Pemisahan informasi dihitung dengan cara :</p>
+<p><img alt="" src="../assets/images/image012.gif" /></p>
+<p>​           bahwa <em>S1</em> sampai <em>Sc</em> adalah <em>c</em> subset yang dihasilkan dari pemecahan <em>S</em> dengan menggunakan atribut A yang mempunyai sebanyak <em>c</em> nilai. Selanjutnya rasio perolehan (gain ratio) dihitung dengan cara :</p>
+<p><img alt="" src="../assets/images/image014.gif" /></p>
+<h3 id="kelebihan-dan-kekurangan-pohon-keputusan">Kelebihan dan kekurangan pohon keputusan<a class="headerlink" href="#kelebihan-dan-kekurangan-pohon-keputusan" title="Permanent link">&para;</a></h3>
+<h4 id="kelebihan-pohon-keputusan">Kelebihan Pohon Keputusan<a class="headerlink" href="#kelebihan-pohon-keputusan" title="Permanent link">&para;</a></h4>
+<p>•Daerah pengambilan keputusan yang sebelumnya kompleks dan sangat global, dapat diubahmenjadi lebih simpel dan spesifik.</p>
+<p>•Eliminasi perhitungan-perhitungan yang tidak diperlukan, karena ketika menggunakanmetode pohon keputusan maka sample diuji hanya berdasarkan kriteria atau kelas tertentu.</p>
+<p>•Fleksibel untuk memilih fitur dari internal node yang berbeda, fitur yang terpilih akanmembedakan suatu kriteria dibandingkan kriteria yang lain dalam node yang sama.Flefleksibelan metode pohon keputusan ini meningkatkan kualitas keputusan yang dihasilkan jika dibandingkan ketika menggunakan metode penghitungan satu tahap yang lebih konvensional.</p>
+<p>•Dalam analisis multivariat, dengan kriteria dan kelas yang jumlahnya sangat banyak, seorangpenguji biasanya perlu untuk mengestimasikan baik itu distribusi dimensi tinggi ataupunparameter tertentu dari distribusi kelas tersebut. Metode pohon keputusan dapatmenghindari munculnya permasalahan ini dengan menggunakan criteria yang jumlahnyalebih sedikit pada setiap node internal tanpa banyak mengurangi kualitas keputusan yang dihasilkan.</p>
+<h4 id="kekurangan-pohon-keputuan">Kekurangan Pohon Keputuan<a class="headerlink" href="#kekurangan-pohon-keputuan" title="Permanent link">&para;</a></h4>
+<p>•terjadi overlap terutama ketika kelas-kelas dan criteria yang digunakan jumlahnya sangat banyak. Hal tersebut juga dapat menyebabkan meningkatnya waktu pengambilan keputusandan jumlah memori yang diperlukan.</p>
+<p>•Pengakumulasian jumlah eror dari setiap tingkat dalam sebuah pohon keputusan yang besar.</p>
+<p>•Kesulitan dalam mendesain pohon keputusan yang optimal.</p>
+<p>•Hasil kualitas keputusan yang didapatkan dari metode pohon keputusan sangat tergantungpada bagaimana pohon tersebut didesain.</p>
+<h3 id="study-kasus-pohon-keputusan-pada-data-shopping_customerdatacsv-menggunakan-python">Study kasus pohon keputusan pada data Shopping_CustomerData.csv menggunakan python<a class="headerlink" href="#study-kasus-pohon-keputusan-pada-data-shopping_customerdatacsv-menggunakan-python" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>        Sebagai contoh, saya akan menunjukkan cara kerja algoritma decision tree dengan dataset sampel dari Shopping_CustomerData.csv. Data ini bersumber dari link berikut:https://www.kaggle.com/bikram1505/shopping-data. Berikut ini merupakan langkah-langkah decision tree dalam pemrograman python:
+</pre></div>
+
+
+<h5 id="langkah-1-import-libraries">Langkah 1: Import Libraries<a class="headerlink" href="#langkah-1-import-libraries" title="Permanent link">&para;</a></h5>
+<p>Pada kasus ini , saya akan menggunakan library pandas,pydotplus dan graphviz</p>
+<div class="codehilite"><pre><span></span><span class="c1"># Mendeklarasikan library</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span> <span class="c1"># Import Decision Tree Classifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span> <span class="c1"># Import train_test_split function</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">metrics</span> <span class="c1">#Import scikit-learn metrics module for accuracy calculation</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">export_graphviz</span>
+<span class="kn">from</span> <span class="nn">sklearn.externals.six</span> <span class="kn">import</span> <span class="n">StringIO</span>  
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>  
+<span class="kn">import</span> <span class="nn">pydotplus</span>
+</pre></div>
+
+<p>Berikut cara instal library pandas,pydotplus graphviz yaitu dengan cara membuka cmd administrator lalu ketik:</p>
+<div class="codehilite"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">pandas</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">pydotplus</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">graphviz</span>
+</pre></div>
+
+<h5 id="langkah-2-menginput-data-serta-menentukan-data-test-dan-data-train">Langkah 2: Menginput Data serta menentukan data test dan data train<a class="headerlink" href="#langkah-2-menginput-data-serta-menentukan-data-test-dan-data-train" title="Permanent link">&para;</a></h5>
+<p>​           Data yang digunakan yakni dataset sampel Shopping_CustomerData.csv. Dibawah ini adalah script untuk menginput data.</p>
+<div class="codehilite"><pre><span></span><span class="c1">#import dataset</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;Shopping_CustomerData.csv&quot;</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">data</span><span class="p">[[</span><span class="s1">&#39;CustomerAge&#39;</span><span class="p">,</span><span class="s1">&#39;AnnualIncome&#39;</span><span class="p">,</span><span class="s1">&#39;CreditScore&#39;</span><span class="p">,</span><span class="s1">&#39;SpendingScore&#39;</span><span class="p">]]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[[</span><span class="s1">&#39;CustomerGender&#39;</span><span class="p">]]</span>
+<span class="n">x_train</span><span class="p">,</span> <span class="n">x_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span><span class="n">random_state</span> <span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">y_train</span>
+</pre></div>
+
+<h5 id="langkah-3-membuat-objek-classifer-decision-tree">Langkah 3: Membuat objek classifer Decision Tree<a class="headerlink" href="#langkah-3-membuat-objek-classifer-decision-tree" title="Permanent link">&para;</a></h5>
+<div class="codehilite"><pre><span></span><span class="c1"># Membuat object classifier decision tree</span>
+<span class="n">clf</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">criterion</span><span class="o">=</span><span class="s2">&quot;entropy&quot;</span><span class="p">,</span> <span class="n">max_depth</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+</pre></div>
+
+<h5 id="langkah-4data-train-decision-tree">Langkah 4:Data train decision tree<a class="headerlink" href="#langkah-4data-train-decision-tree" title="Permanent link">&para;</a></h5>
+<div class="codehilite"><pre><span></span><span class="c1"># Data Train Decision Tree</span>
+<span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">)</span>
+</pre></div>
+
+<h5 id="langkah-5prediksi-respons-untuk-dataset-uji">Langkah 5:Prediksi respons untuk dataset uji<a class="headerlink" href="#langkah-5prediksi-respons-untuk-dataset-uji" title="Permanent link">&para;</a></h5>
+<div class="codehilite"><pre><span></span><span class="c1">#Prediksi respons untuk dataset uji</span>
+<span class="n">predicted_y</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_test</span><span class="p">)</span>
+</pre></div>
+
+<h5 id="langkah-6-model-accuracy-seberapa-sering-penggolongnya-benar">Langkah 6: Model Accuracy, seberapa sering penggolongnya benar?<a class="headerlink" href="#langkah-6-model-accuracy-seberapa-sering-penggolongnya-benar" title="Permanent link">&para;</a></h5>
+<div class="codehilite"><pre><span></span><span class="c1"># Model Accuracy, seberapa sering penggolongnya benar?</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Accuracy:&quot;</span><span class="p">,</span><span class="n">metrics</span><span class="o">.</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predicted_y</span><span class="p">))</span>
+</pre></div>
+
+<h5 id="langkah-7menampilkan-secara-visual-pohon-keputusan-menggunakan-graphviz">Langkah 7:Menampilkan secara visual pohon keputusan menggunakan graphviz<a class="headerlink" href="#langkah-7menampilkan-secara-visual-pohon-keputusan-menggunakan-graphviz" title="Permanent link">&para;</a></h5>
+<div class="codehilite"><pre><span></span><span class="c1">#Menampilkan secara visual pohon keputusan menggunakan graphviz</span>
+<span class="n">feature_cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;CustomerAge&#39;</span><span class="p">,</span><span class="s1">&#39;AnnualIncome&#39;</span><span class="p">,</span><span class="s1">&#39;CreditScore&#39;</span><span class="p">,</span><span class="s1">&#39;SpendingScore&#39;</span><span class="p">]</span>
+<span class="n">dot_data</span> <span class="o">=</span> <span class="n">StringIO</span><span class="p">()</span>
+<span class="n">export_graphviz</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">out_file</span><span class="o">=</span><span class="n">dot_data</span><span class="p">,</span>  
+                <span class="n">filled</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">rounded</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+                <span class="n">special_characters</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">feature_names</span> <span class="o">=</span> <span class="n">feature_cols</span><span class="p">,</span><span class="n">class_names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Male&#39;</span><span class="p">,</span><span class="s1">&#39;Female&#39;</span><span class="p">])</span>
+<span class="n">graph</span> <span class="o">=</span> <span class="n">pydotplus</span><span class="o">.</span><span class="n">graph_from_dot_data</span><span class="p">(</span><span class="n">dot_data</span><span class="o">.</span><span class="n">getvalue</span><span class="p">())</span>  
+<span class="n">graph</span><span class="o">.</span><span class="n">write_png</span><span class="p">(</span><span class="s1">&#39;Shopping_CustomerData.png&#39;</span><span class="p">)</span>
+<span class="n">Image</span><span class="p">(</span><span class="n">graph</span><span class="o">.</span><span class="n">create_png</span><span class="p">())</span>
+</pre></div>
+
+<h5 id="hasil-output-dari-program-diatas-sebagai-berikut">Hasil output dari program diatas sebagai berikut:<a class="headerlink" href="#hasil-output-dari-program-diatas-sebagai-berikut" title="Permanent link">&para;</a></h5>
+<p><img alt="" src="../assets/images/a.JPG" /></p>
+<p><img alt="" src="../assets/images/b.JPG" /></p>
+<p><img alt="" src="../assets/images/c.JPG" /></p>
+<p><img alt="" src="../assets/images/d.JPG" /></p>
+<p><img alt="" src="../assets/images/e.JPG" /></p>
+<p><img alt="" src="../assets/images/Shopping_CustomerData.png" /></p>
+<h5 id="referensi">REFERENSI<a class="headerlink" href="#referensi" title="Permanent link">&para;</a></h5>
+<ul>
+<li><a href="https://www.kaggle.com/bikram150">https://www.kaggle.com/bikram150</a></li>
+<li><a href="https://docplayer.info/46185146-Pohon-keputusan-dengan-algoritma-c4-5.html">https://docplayer.info/46185146-Pohon-keputusan-dengan-algoritma-c4-5.html</a></li>
+<li><a href="http://dwikiridwan.blogspot.com/2017/01/model-dan-algoritma-pohon-keputusan.html">http://dwikiridwan.blogspot.com/2017/01/model-dan-algoritma-pohon-keputusan.html</a></li>
+</ul>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../getting-started/" title="Modul2 KNN" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Modul2 KNN
+              </span>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2019 quraisyi
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/170441100005decision" class="md-footer-social__link fa fa-github-alt"></a>
+    
+      <a href="https://instagram.com/quraisyi80" class="md-footer-social__link fa fa-instagram"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.8c0d971c.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+  </body>
+</html>

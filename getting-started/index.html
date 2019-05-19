@@ -1,0 +1,651 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="A Material Design theme for MkDocs">
+      
+      
+        <link rel="canonical" href="https://quraisyi.github.io/170441100005decision/getting-started/">
+      
+      
+        <meta name="author" content="quraisyi">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.2.0">
+    
+    
+      
+        <title>Modul2 KNN - Data mining</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.750b69bd.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.224b79ff.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "None", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#pengertian-knn" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://quraisyi.github.io/170441100005decision/" title="Data mining" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Data mining
+            </span>
+            <span class="md-header-nav__topic">
+              Modul2 KNN
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/quraisyi/170441100005decision" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    quraisyi/170441100005decision
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+<nav class="md-tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href=".." title="Modul1 K-mean clustering" class="md-tabs__link md-tabs__link--active">
+        Modul1 K-mean clustering
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://quraisyi.github.io/170441100005decision/" title="Data mining" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Data mining
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/quraisyi/170441100005decision" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    quraisyi/170441100005decision
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../specimen/" title="Identitas diri" class="md-nav__link">
+      Identitas diri
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Modul1 K-mean clustering" class="md-nav__link">
+      Modul1 K-mean clustering
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Modul2 KNN
+      </label>
+    
+    <a href="./" title="Modul2 KNN" class="md-nav__link md-nav__link--active">
+      Modul2 KNN
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#apa-yang-dimaksud-knn" title="Apa yang dimaksud knn???" class="md-nav__link">
+    Apa yang dimaksud knn???
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algoritma-knn" title="Algoritma KNN" class="md-nav__link">
+    Algoritma KNN
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referensi" title="Referensi:" class="md-nav__link">
+    Referensi:
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../license/" title="Modul3 Decision tree" class="md-nav__link">
+      Modul3 Decision tree
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#apa-yang-dimaksud-knn" title="Apa yang dimaksud knn???" class="md-nav__link">
+    Apa yang dimaksud knn???
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algoritma-knn" title="Algoritma KNN" class="md-nav__link">
+    Algoritma KNN
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referensi" title="Referensi:" class="md-nav__link">
+    Referensi:
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="pengertian-knn">Pengertian KNN<a class="headerlink" href="#pengertian-knn" title="Permanent link">&para;</a></h1>
+<p><img alt="" src="../assets/images/Knn-Introduction.jpg" /></p>
+<h5 id="apa-yang-dimaksud-knn">Apa yang dimaksud knn???<a class="headerlink" href="#apa-yang-dimaksud-knn" title="Permanent link">&para;</a></h5>
+<p>Algoritme <em>k-nearest neighbor</em> (k-NN atau KNN) adalah sebuah metode untuk melakukan <a href="https://id.wikipedia.org/wiki/Pengenalan_pola">klasifikasi</a> terhadap objek berdasarkan data pembelajaran yang jaraknya paling dekat dengan objek tersebut.</p>
+<p>Data pembelajaran diproyeksikan ke ruang berdimensi banyak, dimana masing-masing dimensi merepresentasikan fitur dari data. Ruang ini dibagi menjadi bagian-bagian berdasarkan klasifikasi data pembelajaran. Sebuah titik pada ruang ini ditandai kelas <em>c</em> jika kelas <em>c</em> merupakan klasifikasi yang paling banyak ditemui pada <em>k</em> buah tetangga terdekat titk tersebut. Dekat atau jauhnya tetangga biasanya dihitung berdasarkan jarak Euclidean.</p>
+<p>Pada fase pembelajaran, algoritme ini hanya melakukan penyimpanan vektor-vektor fitur dan klasifikasi dari data pembelajaran. Pada fase klasifikasi, fitur-fitur yang sama dihitung untuk data test (yang klasifikasinya tidak diketahui). Jarak dari vektor yang baru ini terhadap seluruh vektor data pembelajaran dihitung, dan sejumlah <em>k</em> buah yang paling dekat diambil. Titik yang baru klasifikasinya diprediksikan termasuk pada klasifikasi terbanyak dari titik-titik tersebut.</p>
+<p>Nilai <em>k</em> yang terbaik untuk algoritme ini tergantung pada data; secara umumnya, nilai <em>k</em> yang tinggi akan mengurangi efek <em>noise</em> pada klasifikasi, tetapi membuat batasan antara setiap klasifikasi menjadi lebih kabur. Nilai <em>k</em> yang bagus dapat dipilih dengan optimasi parameter, misalnya dengan menggunakan cross-validation. Kasus khusus di mana klasifikasi diprediksikan berdasarkan data pembelajaran yang paling dekat (dengan kata lain, <em>k</em> = 1) disebut algoritme <em>nearest neighbor</em>.</p>
+<p>Ketepatan algoritme k-NN ini sangat dipengaruhi oleh ada atau tidaknya fitur-fitur yang tidak relevan, atau jika bobot fitur tersebut tidak setara dengan relevansinya terhadap klasifikasi. Riset terhadap algoritme ini sebagian besar membahas bagaimana memilih dan memberi bobot terhadap fitur, agar performa klasifikasi menjadi lebih baik.</p>
+<p>Terdapat beberapa jenis algoritme pencarian tetangga terdekat, diantaranya:</p>
+<ul>
+<li>Linear scan</li>
+<li>Pohon kd</li>
+<li>Pohon Balltree</li>
+<li>Pohon metrik</li>
+<li>Locally-sensitive hashing (LSH)</li>
+</ul>
+<p>Algoritme k-NN ini memiliki konsistensi yang kuat. Ketika jumlah data mendekati tak hingga, algoritme ini menjamin <em>error rate</em> yang tidak lebih dari dua kali <em>Bayes error rate</em> (<em>error rate</em> minimum untuk distribusi data tertentu).</p>
+<h5 id="algoritma-knn">Algoritma KNN<a class="headerlink" href="#algoritma-knn" title="Permanent link">&para;</a></h5>
+<ol>
+<li>
+<p>Menentukan parameter K sebagai banyaknya jumlah tetangga terdekat dengan objek baru.</p>
+</li>
+<li>
+<p>Menghitung jarak antar objek/data baru terhadap semua objek/data yan gtelah di training.</p>
+</li>
+<li>
+<p>Urutkan hasil perhitungan tersebut.</p>
+</li>
+<li>
+<p>Tentukan tetangga terdekat berdasarkan jarak minimum ke K.</p>
+</li>
+<li>
+<p>Tentukan kategori dari tetangga terdekat dengan objek/data.</p>
+</li>
+<li>
+<p>Gunakan kategori mayoritas sebagai klasifikasi objek/data baru.</p>
+</li>
+</ol>
+<p>##### Kelebihan dan kekurangan KNN</p>
+<p>1.Kelebihan  </p>
+<p>​        KNN memiliki beberapa kelebihan yaitu bahwa dia tangguh terhadap training data yang noisy dan efektif apabila data latih nya besar. </p>
+<p>2.Kelemahan </p>
+<p>​        Sedangkan kelemahan dari KNN adalah : 1. KNN perlu menentukan nilai dari parameter K (jumlah dari tetangga terdekat) 2. Pembelajaran berdasarkan jarak tidak jelas mengenai jenis jarak apa yang harus digunakan dan atribut mana yang harus digunakan untuk mendapatkan hasil yang terbaik 3. Biaya komputasi cukup tinggi karena diperlukan perhitungan jarak dari tiap sample uji pada keseluruhan sample latih.</p>
+<p># Study kasus</p>
+<p>##### Study kasus KNN pada data Neighborhood_Plan_Status_data.csv</p>
+<p>Sebagai contoh, saya akan menunjukkan cara kerja algoritma K-NN dengan dataset sampel dari data Neighborhood_Plan_Status_data.csv. Data ini bersumber URL: <a href="https://data.austintexas.gov/api/views/y2av-vmhq/rows.csv?accessType=DOWNLOAD">https://data.austintexas.gov/api/views/y2av-vmhq/rows.csv?accessType=DOWNLOAD</a></p>
+<p>Implementasi studi kasus:</p>
+<p><strong>Langkah 1: Import Libraries</strong></p>
+<p>Pada kasus ini , saya akan menggunakan library pandas dan sklearn</p>
+<div class="codehilite"><pre><span></span><span class="c1">### Import librari terlebih dahulu</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+</pre></div>
+
+<p>cara instal library pandas dan sklearn yaitu dengan cara membuka cmd administrator lalu ketik:</p>
+<div class="codehilite"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">pandas</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">matplotlib</span>
+</pre></div>
+
+<p>Seperti yang dapat Anda lihat di atas , saya mengiport libraries:</p>
+<p>>&gt; Panda untuk membaca dan menulis spreadsheet</p>
+<p>>&gt; Sklearn teruji dan memiliki dokumentasi yang super lengkap</p>
+<p><strong>Langkah 2: Menginput Data</strong></p>
+<p>Dibawah ini adalah script untuk menginput data.</p>
+<div class="codehilite"><pre><span></span><span class="c1">### Menginput file csv dengan librari pandas</span>
+<span class="n">data_orj</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;Neighborhood_Plan_Status_data.csv&quot;</span><span class="p">)</span>
+</pre></div>
+
+<p><strong>Langkah 3: Mengambil semua data untuk percobaan</strong></p>
+<div class="codehilite"><pre><span></span><span class="c1">### Mengambil semua data untuk percobaan</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data_orj</span><span class="o">.</span><span class="n">loc</span> <span class="p">[:,</span><span class="s1">&#39;the_geom&#39;</span><span class="p">:</span><span class="s1">&#39;COMBINED&#39;</span><span class="p">]</span>
+</pre></div>
+
+<p><strong>Langkah 4: Mengambil tiga colom</strong></p>
+<div class="codehilite"><pre><span></span><span class="c1">### Mengambil 3 kolom</span>
+<span class="n">data_knn</span> <span class="o">=</span> <span class="n">data</span><span class="p">[[</span><span class="s1">&#39;GIS_ID&#39;</span><span class="p">,</span><span class="s1">&#39;COMBINED&#39;</span><span class="p">,</span><span class="s1">&#39;OBJECTID&#39;</span><span class="p">]]</span>
+</pre></div>
+
+<p><strong>Langkah 5: Input jumlah K atau jumlah tetangga terdekat</strong></p>
+<div class="codehilite"><pre><span></span><span class="c1">### Input jumlah K atau jumlah tetangga terdekat</span>
+<span class="n">inK</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Masukkan K : &quot;</span><span class="p">))</span>
+</pre></div>
+
+<p><strong>Langkah 6: Mencari knn dengan menggunakan sklearn neighbors clssifier</strong></p>
+<div class="codehilite"><pre><span></span><span class="n">knn</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span> <span class="o">=</span> <span class="n">inK</span><span class="p">)</span>  
+<span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">data_knn</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="n">data_knn</span><span class="o">.</span><span class="n">columns</span> <span class="o">!=</span> <span class="s1">&#39;COMBINED&#39;</span><span class="p">],</span> <span class="n">data_knn</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;COMBINED&#39;</span><span class="p">]</span>
+<span class="n">x_train</span><span class="p">,</span><span class="n">x_test</span><span class="p">,</span><span class="n">y_train</span><span class="p">,</span><span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">42</span><span class="p">)</span>
+<span class="n">knn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">)</span>
+<span class="n">prediction</span> <span class="o">=</span> <span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_test</span><span class="p">)</span>
+</pre></div>
+
+<p><strong>Langkah 7: Menampilkan akurasi data</strong></p>
+<div class="codehilite"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="s1">&#39;KNN dengan (K =&#39;</span><span class="p">,</span><span class="n">inK</span><span class="p">,</span><span class="s1">&#39;) Akurasinya adalah: &#39;</span><span class="p">,</span> <span class="n">knn</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">x_test</span><span class="p">,</span><span class="n">y_test</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+
+<p>##### LANGKAH 8: MENAMPILKAN DATA ASLI DAN PREDIKSINYA</p>
+<div class="codehilite"><pre><span></span><span class="n">datatest</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">x_test</span><span class="p">)</span>
+<span class="n">datatest</span><span class="p">[</span><span class="s2">&quot;COMBINED&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">y_test</span>
+<span class="n">datatest</span><span class="p">[</span><span class="s2">&quot;prediksi&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">prediction</span>
+<span class="k">print</span> <span class="p">(</span><span class="s2">&quot;Data Asli dan Prediksinya&quot;</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="n">datatest</span><span class="p">)</span>
+</pre></div>
+
+<p>##### HASIL OUTPUT DARI PROGRAM DI ATAS:</p>
+<p><img alt="" src="../assets/images/Capture.JPG" /></p>
+<h5 id="referensi">Referensi:<a class="headerlink" href="#referensi" title="Permanent link">&para;</a></h5>
+<ul>
+<li><a href="https://data.austintexas.gov/api/views/y2av-vmhq/rows.csv?accessType=DOWNLOAD">https://data.austintexas.gov/api/views/y2av-vmhq/rows.csv?accessType=DOWNLOAD</a></li>
+<li><a href="http://cgeduntuksemua.blogspot.com/2012/03/pengertian-kelebihan-dan-kekurangan-k.html">http://cgeduntuksemua.blogspot.com/2012/03/pengertian-kelebihan-dan-kekurangan-k.html</a></li>
+<li><a href="https://www.ketutrare.com/2018/11/algoritma-k-nearest-neighbor-dan-contoh-soal.html">https://www.ketutrare.com/2018/11/algoritma-k-nearest-neighbor-dan-contoh-soal.html</a></li>
+<li><a href="https://id.wikipedia.org/wiki/KNN">https://id.wikipedia.org/wiki/KNN</a></li>
+</ul>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href=".." title="Modul1 K-mean clustering" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Modul1 K-mean clustering
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../license/" title="Modul3 Decision tree" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Modul3 Decision tree
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2019 quraisyi
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/170441100005decision" class="md-footer-social__link fa fa-github-alt"></a>
+    
+      <a href="https://instagram.com/quraisyi80" class="md-footer-social__link fa fa-instagram"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.8c0d971c.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+  </body>
+</html>
